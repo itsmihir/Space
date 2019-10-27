@@ -8,16 +8,17 @@
 </head>
 <body>
     <form action="" method="POST">
-        Full Name: <input type="text" required></br></br>
-        username :<input type="text" required></br></br>
-        email-id : <input type="email" required></br></br>
-        sex : <input type="radio" name="gender" value="male" checked> Male
-        <input type="radio" name="gender" value="female"> Female
-        <input type="radio" name="gender" value="other"> Other</br></br>
-        Phone no.:<input type="number" required></br></br>
-        password :<input type="password"></br></br>
-        DOB : <input type="date" name="bday" min="2000-01-02">
-        <button type="submit">submit</button>
+        Full Name: <input id="name" type="text" required></br></br>
+        username :<input id="new-username" type="text" required></br></br>
+        email-id : <input id="email" type="email" required></br></br>
+        sex : <input id="sex-male" type="radio" name="gender" value="male" checked> Male
+        <input id="sex-female" type="radio" name="gender" value="female"> Female
+        <input id="sex-other" type="radio" name="gender" value="other"> Other</br></br>
+        Phone no.:<input id="phoneNumber" type="number" required></br></br>
+        password :<input id="new-password" type="password"></br></br>
+        DOB : <input id="dob" type="date" name="bday" min="2000-01-02">
+        <button id="registerSubmit" type="submit">submit</button>
     </form>
+    <script src="../js/register.js"></script>
 </body>
 </html>

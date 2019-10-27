@@ -15,11 +15,11 @@ router.use(bodyParser.urlencoded({
   }));
 
 
-//@route /api/auth
+//@route /api/auth/login
 //@desc to get username and password
 //PUBLIC
 
-router.post('/',(req,res)=>
+router.post('/login',(req,res)=>
 {
     console.log(req.body);
 })
@@ -32,6 +32,7 @@ router.post('/',(req,res)=>
 router.post('/register',(req,res)=>
 {
   console.log(req.body);
+  res.send("ok");
 })
 
 

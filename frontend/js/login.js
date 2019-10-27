@@ -1,14 +1,4 @@
-// for login
-
-document.querySelector("#loginsubmit").addEventListener("click",()=>
-{
-    event.preventDefault()
-    var username = document.querySelector("#username");
-    var pass = document.querySelector("#password");
-    console.log(username.value);
-    console.log(pass.value);
-   
-    async function postData(url = '') {
+  async function postData(url = '' , data) {
       // Default options are marked with *
       const response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -21,20 +11,28 @@ document.querySelector("#loginsubmit").addEventListener("click",()=>
         },
         redirect: 'follow', // manual, *follow, error
         referrer: 'no-referrer', // no-referrer, *client
-        body: `username=${username.value}&password=${pass.value}`, // body data type must match "Content-Type" header
+        body:data, // body data type must match "Content-Type" header
       });
       return await response.json(); // parses JSON response into native JavaScript objects
     }
-    
 
-    let res = postData('http://127.0.0.1:8080/api/auth');
+
+// for login
+
+
+document.querySelector("#loginsubmit").addEventListener("click",()=>
+{
+    event.preventDefault();
+    let username = document.querySelector("#username");
+    let pass = document.querySelector("#password");
+    console.log(username.value);
+    console.log(pass.value);
+   
+    
+    let data = `username=${username.value}&password=${pass.value}`;
+    console.log(data);
+    let res = postData('http://127.0.0.1:8080/api/auth/login', data);
      
 });
 
 
-// for register
-
-document.querySelector("#register").addEventListener("click",()=>
-{
-  
-})
